@@ -46,7 +46,32 @@ for (let i = 0; i < prices.length; i++) {
 // Ejercicio 5.5
 
 var myUnorderedList = document.getElementById('lista'); // señalamos la etiqueta con id lista
-var newProduct = document.createElement('li');
-newProduct.setAttribute('id', 'p4');
+var newProduct = document.createElement('li'); // creamos un nuevo elemento li para la lista
+newProduct.setAttribute('id', 'p4'); // le añadimos los atributos
 myUnorderedList.appendChild(newProduct).innerHTML='Tila <span class="precio">2.20</span> €';
+// finalmente añadimos con innerHTML para facilitar el trabajo lo demás.
 
+
+// Ejercicio 5.6
+var firstProductLi = document.getElementById('p1');
+firstProductLi.innerHTML='Producto destacado <span class="precio">9.99</span> €';
+
+// Ejercicio 5.7
+// Para ver que funciona, eliminar barras de comentario
+
+//stock.parentNode.removeChild(stock);
+
+// Ejercicio 5.8
+
+var students = document.getElementsByName('alumnos');
+
+for (let i = 0; i < students.length; i++) {
+    if(students[i].type == "checkbox"){
+        students[i].checked = true;
+    }
+    
+}
+
+// Ejercicio 8.9
+
+console.log(prices.length);
