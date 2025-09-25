@@ -24,12 +24,12 @@ colours[1]="amarillo";
  */
 
 const countries = ["España", "Francia", "Alemania", "Italia"];
-for (let i = 0; i < countries.length; i++) {
+for (let i in countries) {
     //console.log(countries[i]);
 }
 
 countries[0]="Rusia";
-for (let i = 0; i < countries.length; i++) {
+for (let i in countries) {
     //console.log(countries[i]);
 }
 
