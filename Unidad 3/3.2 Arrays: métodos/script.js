@@ -35,3 +35,16 @@ names.reverse();
 /* --------------------------------------------------------- */
 
 // Ejercicio 5
+
+let ages = new Array(25, 30, 18, 40, 25, 30);
+// console.log(ages.indexOf(30));
+// console.log(ages.lastIndexOf(25));
+
+// Ejercicio 6
+
+numbers = new Array(4, 21, 33, 12, 9, 54);
+let justPairs = new Array();
+numbers.every(function (num) {
+    return num%2==0;
+}) ?? justPairs.push(num) ;
+console.log(justPairs);
