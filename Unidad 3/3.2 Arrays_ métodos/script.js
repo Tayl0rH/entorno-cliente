@@ -44,7 +44,9 @@ let ages = new Array(25, 30, 18, 40, 25, 30);
 
 numbers = new Array(4, 21, 33, 12, 9, 54);
 let justPairs = new Array();
-numbers.every(function (num) {
-    return num%2==0;
-}) ?? justPairs.push(num) ;
+for (let number of numbers) {
+    if(number%2==0){
+        justPairs.push(number);
+    }    
+}
 console.log(justPairs);
