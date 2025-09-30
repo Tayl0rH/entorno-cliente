@@ -43,10 +43,7 @@ let ages = new Array(25, 30, 18, 40, 25, 30);
 // Ejercicio 6
 
 numbers = new Array(4, 21, 33, 12, 9, 54);
-let justPairs = new Array();
-for (let number of numbers) {
-    if(number%2==0){
-        justPairs.push(number);
-    }    
-}
+justPairs = numbers.filter(function(pairs) {
+    return pairs%2 == 0
+})
 console.log(justPairs);
