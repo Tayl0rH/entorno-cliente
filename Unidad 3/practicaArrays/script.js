@@ -15,7 +15,7 @@ for (let i = 0; i < lottery.length; i++) {
         
     }
 }
-
+console.log('Ejercicio 1');
 console.log(lottery);
 
 // Ejercicio 2
@@ -38,4 +38,5 @@ randNumbers.forEach(number => {
     }
 });
 
+console.log('Ejercicio 2');
 console.log(numbersMap);
