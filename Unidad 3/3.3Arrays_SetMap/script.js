@@ -35,25 +35,17 @@ people.set('Taylor', 25);
 // Ejercicio 5
 
 let words = ["sol", "luna", "mar", "sol", "estrella", "mar", "sol", "nube"];
-let counter = new Array();
 
 function countOccurrences(words){
     
     let occurrences = new Map();
 
-    for (const word of words) {
-        
-        if (occurrences.has(word)){
-            
-            for (const value of occurrences.values()) {
-                occurrences.set(word, value++);
-            }
-            
-        } else {
-            occurrences.set(word, 1);
-        }
-    };
+    for (let i = 0; i < words.length; i++) {   
+        let actualValue = occurrences.get(words[i]) || 0;
+        occurrences.set(words[i], actualValue+1);           
+    }   
 
+    
     return occurrences;
     
 };
