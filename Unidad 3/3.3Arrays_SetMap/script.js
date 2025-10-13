@@ -35,6 +35,7 @@ people.set('Taylor', 25);
 // Ejercicio 5
 
 let words = ["sol", "luna", "mar", "sol", "estrella", "mar", "sol", "nube"];
+let counter = new Array();
 
 function countOccurrences(words){
     
