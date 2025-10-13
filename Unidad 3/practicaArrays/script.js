@@ -16,7 +16,7 @@ for (let i = 0; i < lottery.length; i++) {
     }
 }
 
-// console.log(lottery);
+console.log(lottery);
 
 // Ejercicio 2
 
