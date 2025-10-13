@@ -21,51 +21,21 @@ for (let i = 0; i < lottery.length; i++) {
 // Ejercicio 2
 
 let randNumbers = new Array(10000);
-let counter = new Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+let numbersMap = new Map();
 
 for (let i = 0; i < randNumbers.length; i++) {
-    randNumbers[i]=Math.floor(Math.random()*11);
-
-    switch (randNumbers[i]) {
-        case 1:
-            counter[i]+=counter[i];
-
-        case 2:
-            counter[i]+=counter[i];
-
-        case 3:
-            counter[i]+=counter[i];
-
-        case 4:
-            counter[i]+=counter[i];
-
-        case 5:
-            counter[i]+=counter[i];
-
-        case 6:
-            counter[i]+=counter[i];
-
-        case 7:
-            counter[i]+=counter[i];
-
-        case 8:
-            counter[i]+=counter[i];
-
-        case 9:
-            counter[i]+=counter[i];
-
-        case 10:
-            counter[i]+=counter[i];
-    
-        default:
-            break;
-    }
+    randNumbers[i]=Math.floor((Math.random()*10)+1);    
 }
 
-
-
-let numbersMap = new Map();
-    for (let i = 1; i < 11; i++) {
-        numbersMap.set(i, counter[i-1]);
+randNumbers.sort(function(num1, num2){
+    return num1 - num2;
+});
+randNumbers.forEach(number => {
+    if(numbersMap.has(number)){
+        numbersMap.set(number, numbersMap.get(number)+1)
+    } else {
+        numbersMap.set(number, 1);
     }
+});
+
 console.log(numbersMap);
