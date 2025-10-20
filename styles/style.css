@@ -1,0 +1,37 @@
+:root {
+    --grey: #9CA69D;
+    --full-yellow: #F2E529;
+    --yellow: #F2D027;
+    --yellow-green: #BFA626;
+    --brown: #262626;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    background-color: var(--yellow-green);
+    color: var(--brown);
+}
+ul{
+    list-style: none;
+}
+li, #index{
+    display: inline;
+    border: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--brown);
+    padding: 5px;
+    margin: 5px;
+    background-color: var(--yellow);
+}
+a{
+    text-decoration: none;
+    color: var(--brown);
+}
+li:hover{
+    background-color: #BFA626;
+}
