@@ -9,5 +9,6 @@ do {
 console.log(wordsArray);
 
 wordsArray = [...new Set(wordsArray)];
+wordsArray.reverse();
 
 console.log(wordsArray);
