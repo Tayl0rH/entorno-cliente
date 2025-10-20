@@ -6,17 +6,24 @@
     --brown: #262626;
 }
 body{
-    margin: 0;
-    padding: 0;
+    border: 5px;
+    border-style: solid;
+    margin: 25px 50px 25px 50px; 
 }
 
 h1{
     text-align: center;
     background-color: var(--yellow-green);
     color: var(--brown);
+    padding-bottom: 15px;
+    margin: 0;
+}
+hr{
+    margin: 0px 0px 25px 0px;
 }
 ul{
     list-style: none;
+    margin-bottom: 25px;
 }
 li, #index{
     display: inline;
