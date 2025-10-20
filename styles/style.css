@@ -42,3 +42,7 @@ a{
 li:hover{
     background-color: #BFA626;
 }
+#noStyle{
+    background-color: transparent;
+    border-style: none;
+}

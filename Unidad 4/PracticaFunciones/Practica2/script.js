@@ -22,3 +22,13 @@ for (const word of wordsArray) {
 }
 
 console.log(wordsMap);
+
+let solution = '<ol>';
+for ([value, key] of wordsMap) {
+    solution+= '<li id="noStyle">' + value + ' => ' + key + '</li>';
+}
+solution +='</ol>'
+
+
+let text = document.getElementById('solution');
+text.innerHTML = solution;

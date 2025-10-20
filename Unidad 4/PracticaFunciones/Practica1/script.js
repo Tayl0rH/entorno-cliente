@@ -12,3 +12,6 @@ wordsArray = [...new Set(wordsArray)];
 wordsArray.reverse();
 
 console.log(wordsArray);
+
+let solution = document.getElementById('solution');
+solution.textContent = wordsArray;
