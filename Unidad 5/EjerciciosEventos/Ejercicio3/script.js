@@ -1,22 +1,21 @@
 let lines = document.getElementsByTagName('p');
 
-function hideElement (hideLine) {
-    hideLine.target.style.display = 'none';
+function hideElement (line) {
+    line.style.display = 'none';
 }
-function displayElement () {}
 
-function deleteElement (deleteLine) {
-    deleteLine.remove();
+function deleteElement (line) {
+    line.remove();
 }
 
 for (let i = 0; i < lines.length; i++) {
-    lines[i].addEventListener("click", hideElement);
-    lines[i].addEventListener("contextmenu", deleteElement);
+    lines[i].addEventListener("click", ()=>hideElement(lines[i]));
+    lines[i].addEventListener("contextmenu", () => deleteElement(lines[i]));
 }
 
 
-document.getElementById("button").addEventListener("click", (event)=>{
+document.getElementById("button").addEventListener("click", ()=>{
     for (let i = 0; i < lines.length; i++) {
-        lines[i].target.style.display='true';
+        lines[i].style.display='';
     }
 });
