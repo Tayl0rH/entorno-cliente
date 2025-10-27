@@ -6,11 +6,54 @@
     <title>Practica 2</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="../../../styles/style.css">
+    <style>
+        form {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--yellow);
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--yellow-green);
+        }
+    </style>
 
 </head>
 <body>
     
-    <h1>Practica 1</h1>
+    <h1>Practica 2</h1>
     <hr>
     <p>Muestra una página en la que muestre un formulario con dos campos: email y password,
     <br>con un botón para enviar el formulario.
@@ -26,6 +69,24 @@
     <br>mientras no sean correctas).
     <br>Nota: utilizar el evento blur (https://www.w3schools.com/jsref/dom_obj_event.asp)</p>
     
+    <form action="#" method="post">
+        <h2>Iniciar sesión</h2>
+        <label for="mail">Email:</label>
+        <input type="mail" id="mail" name="mail" required>
+        <span id="errorMail"></span>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" readOnly required>
+        <span id="errorPass"></span>
+
+
+        <button type="submit" id="submit" disabled>Enviar</button>
+    </form>
+
+
+
+
+
     <a href="../../../index.html" id="index">Inicio</a>
 
     

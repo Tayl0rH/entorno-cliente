@@ -25,7 +25,7 @@ ul{
     list-style: none;
     margin-bottom: 25px;
 }
-li, #index{
+button, #index, li{
     display: inline;
     border: 5px;
     border-radius: 10px;
@@ -39,8 +39,9 @@ a{
     text-decoration: none;
     color: var(--brown);
 }
-li:hover{
+li:hover, button:hover{
     background-color: #BFA626;
+    cursor: pointer;
 }
 #noStyle{
     background-color: transparent;

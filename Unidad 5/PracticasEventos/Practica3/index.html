@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,52 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="../../../styles/style.css">
     <style>
-        div{
-            border:1px solid black;
-            padding:1em;
-            position:fixed;
-            top:20px;
-            width:200px;
-            height:100px;
+        div {
+            border: 1px solid black;
+            padding: 1em;
+            width: 200px;
+            height: 100px;
+            margin-top: 1rem;
         }
-        #capa1{
-            left:50px;
+
+        #capa1 {
+            left: 50px;
         }
-        #capa2{
-            left:400px;
+
+        #capa2 {
+            left: 400px;
         }
     </style>
 
 </head>
+
 <body>
-    
-    <h1>Practica 1</h1>
+
+    <h1>Practica </h1>
     <hr>
     <p>Crea una página que muestre dos capas del mismo tamaño (200px X 100px). La primera
-    <br>capa mostrará el texto: "Soy arrastrable" y tendrá fondo amarillo. La segunda mostrará el
-    <br>texto: "Soy el destino" y tendrá fondo blanco.
-    <br>La aplicación permitirá arrastrar la primera en la segundo.
-    <br>Durante el arrastre, la primera capa se mostrará con una opacidad del 50% y al arrastrar
-    <br>sobre la segunda, ésta (el destino) se cambiará a fondo rojo. Al soltar en la segunda capa la
-    <br>primera, la primera desaparece y en la segundo aparece el texto "Lo has logrado".
-    <br>Nota: utilizar los eventos drag y drop
-    <br>(https://www.w3schools.com/jsref/dom_obj_event.asp)
+        <br>capa mostrará el texto: "Soy arrastrable" y tendrá fondo amarillo. La segunda mostrará el
+        <br>texto: "Soy el destino" y tendrá fondo blanco.
+        <br>La aplicación permitirá arrastrar la primera en la segundo.
+        <br>Durante el arrastre, la primera capa se mostrará con una opacidad del 50% y al arrastrar
+        <br>sobre la segunda, ésta (el destino) se cambiará a fondo rojo. Al soltar en la segunda capa la
+        <br>primera, la primera desaparece y en la segundo aparece el texto "Lo has logrado".
+        <br>Nota: utilizar los eventos drag y drop
+        <br>(https://www.w3schools.com/jsref/dom_obj_event.asp)
 
     </p>
     <br>Nota: utilizar el evento blur (https://www.w3schools.com/jsref/dom_obj_event.asp)</p>
-    
+    <br>
 
-    <div id="capa1" style="background-color: yellow">Soy arrastrable</div>
-    <div id="capa2">Soy el d
+    <div class="div" id="capa1" style="background-color: yellow">Soy arrastrable</div>
+    <div class="div" id="capa2">Soy el destino </div>
 
 
 
     <a href="../../../index.html" id="index">Inicio</a>
 
-    
+
 
 </body>
+
 </html>
