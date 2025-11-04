@@ -1,4 +1,3 @@
-
 let result=150;
 let resultDiv = document.getElementById('result');
 resultDiv.textContent = result;
