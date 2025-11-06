@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../../../styles/style.css">
+
+</head>
+<body>
+    
+    <h1>Practica 1</h1>
+    <hr>
+    <div>
+        Crea una pequeña simulación de proceso de compra online.
+    <br>La página tendrá:
+    <ul id="noStyle">
+        <li id="noStyle">• Un campo de texto para introducir el nombre del producto.</li>
+        <li id="noStyle">• Otro campo para la dirección de envío.</li>
+        <li id="noStyle">• Un botón “Realizar compra”.</li>
+        <li id="noStyle">• Un elemento p para mostrar el resultado.</li>
+    </ul>
+Cuando el usuario pulse el botón, deben ocurrir dos pasos encadenados:
+    <ul id="noStyle">
+        <li id="noStyle">
+            1. Función procesarPago(producto) que devuelve una promesa.
+            <ul id="noStyle">
+                <li id="noStyle">o Espera 1,5 segundos antes de resolverse o rechazarse.</li>
+                <li id="noStyle">o Si se ha introducido un producto, se resuelve con el mensaje <br> 
+                    "Pago procesado correctamente para [producto]".</li>
+                <li id="noStyle">o Si el campo está vacío, se rechaza con el mensaje <br> 
+                    "No se puede procesar el pago sin producto".</li>
+            </ul>
+        </li>
+        <li id="noStyle">2. Función enviarPedido() que devuelve una promesa.
+            <ul id="noStyle">
+                <li id="noStyle">o Se ejecuta solo si el pago fue correcto.</li>
+                <li id="noStyle">o Valida que la dirección no esté vacía. Si está vacía, se rechaza con <br>
+                    "Dirección de envío no válida".</li>
+                <li id="noStyle"></li>
+                <li id="noStyle">o Si es válida, espera 2 segundos y tiene un 20% de probabilidad de error <br>
+                    aleatorio:
+                    <ul>
+                        <li id="noStyle">• Si hay error → reject("Error durante el envío, intente de nuevo.")</li>
+                        <li id="noStyle">• Si no hay error → resolve("Pedido enviado correctamente a [dirección]")</li>
+                    </ul>
+                </li>
+                    
+            </ul>
+        </li>
+    </ul>
+    El resultado final (o el error) debe mostrarse en un p del DOM.
+    </div> 
+
+
+    <div style="border: solid; padding: 10px;">
+        <form action="">
+            <label for="productName">Nombre del Producto:</label>
+            <input type="text" id="productName" name="productName"><br>
+
+            <label for="direction">Dirección de Envio</label>
+            <input type="text" id="direction" name="direction"><br>
+
+            <button type="submit" id="button" style="border: solid; background-color: lightskyblue;">Realizar compra</button> <br>
+
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <br><br>
+    <a href="../../../index.html" id="index">Inicio</a>
+
+</body>
+</html>

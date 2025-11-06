@@ -1,20 +1,19 @@
 function firstFunc () {
-    return new Promise ((resolved, rejected) => {
-        if(true) resolved(10);
-        else rejected(Error('Somethign went wrong'));
-    });
+    return  Promise.resolve(10);
 }
 function secondFunc (value) {
-
-    return new Promise ((resolved, rejected) => {
-        if(true) resolved(value*2);
-        else rejected(Error('Somethign went wrong'));
-    });
+    return Promise.resolve(value*2);
 }
 function thirdFunc (value) {
-
-    return new Promise ((resolved, rejected) => {
-        if(true) resolved(value+5);
-        else rejected(Error('Somethign went wrong'));
-    });
+    return Promise.resolve(value+5);
 }
+
+firstFunc().then((result) =>{
+    console.log(result)
+    secondFunc(result).then((result2) =>{
+        console.log(result2);
+        thirdFunc(result2).then((result3)=>{
+            console.log(result3);
+        })
+    })
+})
