@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script3.js" defer></script>
+</head>
+<body>
+    <div>
+        <div style="padding: 10px; text-align: center;">
+            <form action="">
+                <label for="question">Pregunta: </label>
+                <input type="text" id="question" name="question"><br><br>
+
+                <input type="radio" id="trueorfalse" value="true">
+                <label for="true">Verdadero</label>
+                <input type="radio" id="trueorfalse" value="false">
+                <label for="false">Falso</label><br><br>
+
+                <label for="mark">Puntuación:</label>
+                <input type="text" id="mark" name="mark"><br><br>
+                
+                <button id="back">Atrás</button>
+                <button id="save" disabled >Grabar</button>
+            </form>
+        </div>
+        
+        <div id="questions"></div>
+    </div>
+</body>
+</html>
