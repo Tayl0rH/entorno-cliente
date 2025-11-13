@@ -1,4 +1,7 @@
+// conseguir los datos de usuarios anteriores en caso de ser necesario
+
 const savedUserData =  JSON.parse(localStorage.getItem('userData'));
+
 
 document.getElementById('welcomeDiv')
     .innerHTML = 'Hola '+ savedUserData.username +'<br>'+

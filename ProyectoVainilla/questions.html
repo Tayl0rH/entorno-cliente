@@ -9,8 +9,8 @@
 </head>
 <body>
     <div>
-        <div id="box" style="padding: 10px; text-align: center;">
-            <form action="">
+        <div style="padding: 10px; text-align: center;">
+            <form action="" id="form">
                 <label for="question">Pregunta: </label>
                 <input type="text" id="question" name="question"><br><br>
 
@@ -25,9 +25,29 @@
                 <button id="back">Atrás</button>
                 <button id="save" disabled >Grabar</button>
             </form>
+            <div id="box"></div>
         </div>
+
         <hr>
-        <div id="questions">lerolero</div>
+
+        <div id="questions">
+
+            <div id="charging">Cargando preguntas...</div>
+
+            <div id="tableDiv" style="display: none;">
+                <table id="table" style="border-style: solid; display: table;">
+                    <tr style="border-style: solid;">
+                        <th>Pregunta</th>
+                        <th>Respuesta</th>
+                        <th>Puntuación</th>
+                        <th>Estado</th>
+                    </tr>
+
+
+                </table>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>

@@ -23,15 +23,17 @@ function rightMail() {
     if (valueArr.includes('@') && valueArr.includes('.')) {
         if (valueArr.indexOf('@') + 1 < valueArr.indexOf('.')) {
             if (valueArr.indexOf('.') != valueArr.length - 1) {
-                window.location.href='/ProyectoVainilla/pag2.html';
+                window.location.href = '/ProyectoVainilla/pag2.html';
             } else {
-                return('El correo no puede finalizar en .');
+
+                return ('El correo no puede finalizar en .');
             }
         } else {
             return ('El correo ha de tener al menos 1 carácter entre el @ y el .');
         }
     } else {
-        return('El correo debe tener un @ y un .');
+
+        return ('El correo debe tener un @ y un .');
     }
 
 }
@@ -42,27 +44,38 @@ mail.addEventListener('blur', (e) => {
 
     type = rightMail();
 
-    if(typeof type === 'string'){
+    if (typeof type === 'string') {
         document.getElementById('errorMessage').textContent = type;
-        mail.focus();
-        mail.select();
 
+        // necesito un timeot para que suceda una vez acabe el evento, 
+        // xq si no no se focusea.
+
+        setTimeout(() => {
+            mail.focus();
+            mail.select();
+        }, 10);
     } else {
         rightMail();
     }
 
-    let  currentDate = new Date();
+    let currentDate = new Date();
     const userData = {
         username: mail.value,
         currentDate: currentDate.toString(),
         currentHour: currentDate.getHours()
     }
+
+    /* Hacer un array con los usuarios, sus nombres
+    son las claves de los usuarios, dentro tiene nombre y last login
+    y además otro array de preguntas con id incremental,
+    texto de pregunta, respuesta y puntuación */
+
+
+
     localStorage.setItem('userData', JSON.stringify(userData));
 
-    // falta el focus que no me funciona idk why
-    // intentar que el día sea Day Month day Year hh:mm
-    // intentar que la hora sea hh:mm
-
 });
+
+
 
 
