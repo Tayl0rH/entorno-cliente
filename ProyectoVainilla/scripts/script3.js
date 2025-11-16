@@ -22,8 +22,8 @@ function validQuestionary() {
     return new Promise((resolve, reject) => {
         // Si los campos no estan rellenados, no se guardará el resultado
         // ni se actibará el boton
-        if (!question || !mark || !trueorfalse) {
-            reject(Error('Todos los campos son obligatorios'));
+        if (!question || !mark) {
+            reject(Error('Pregunta y puntuación son obligatorios,'));
             return;
         }
 
@@ -42,7 +42,7 @@ function validQuestionary() {
             reject(Error('El puntaje ha de estar entre 0 y 9'));
             return;
         }
-
+        
         resolve();
     })
 }
@@ -73,25 +73,42 @@ document.getElementById('save').addEventListener('click', (e) => {
 
     e.preventDefault();
 
-    let mark = document.getElementById('mark').value;
+    let users = JSON.parse(localStorage.getItem('users'));
+    
+    let errorRand=Math.round(Math.random());
 
-    let vof = document.getElementById('trueorfalse').value;
+    let status;
+    let trueorfalse;
+    
+    let text = document.getElementById('question').value;
+    let punctuation = document.getElementById('mark').value;
+    let answer = document.getElementById('trueorfalse').checked;
 
-    if (vof) {
+    const question = { text, answer, punctuation }
+
+    if (answer) {
         trueorfalse = 'Verdadero';
     } else {
         trueorfalse = 'Falso'
+    }
+    const currentUser = localStorage.getItem('currentUser');
+    
+    if( errorRand === 0 ) {    
+        users[currentUser].questions.push(question);
+        localStorage.setItem("users", JSON.stringify(users));
+        console.log(users);
+        status='OK';
+    } else {
+        status='ERROR';
     }
 
     document.getElementById('table').innerHTML += '<tr>' +
         '<td>Número ' + num + '</td>' +
         '<td>' + trueorfalse + '</td>' +
-        '<td>' + mark + '</td>' +
-        '<td>Guardando...</td>' +
+        '<td>' + punctuation + '</td>' +
+        '<td>'+status+'</td>' +
         '</tr>';
 
     num++;
-    // hacer q cambie el estado para todos...
 
-    // además, el estado puede dar error, no s edebería de guardar la pregunta.
 })
