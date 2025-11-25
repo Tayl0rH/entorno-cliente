@@ -1,18 +1,13 @@
-// Así conseguimos el usuario actual
-const currentUser = localStorage.getItem('currentUser');
+// conseguir los datos de usuarios anteriores en caso de ser necesario
 
-// y así conseguimos todos los usuarios con sus datos
-// para poder conseguir los del usuario actual
-const savedUserData =  JSON.parse(localStorage.getItem('users'));
+const savedUserData =  JSON.parse(localStorage.getItem('userData'));
 
 
-// Mostramos los datos del usuario en el div correspondiente.
 document.getElementById('welcomeDiv')
-    .innerHTML = 'Hola '+ savedUserData[currentUser].username +'<br>'+
-    'La última vez que entraste<br>fue el '+ savedUserData[currentUser].lastDay+
-    '<br>a las '+savedUserData[currentUser].lastHour;
+    .innerHTML = 'Hola '+ savedUserData.username +'<br>'+
+    'La última vez que entraste<br>fue el '+ savedUserData.currentDate+
+    '<br>a las '+savedUserData.currentHour;
 
-    
 document.getElementById('questions').addEventListener('click', ()=>{
     window.location.href='/ProyectoVainilla/questions.html';
 })

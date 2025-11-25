@@ -3,13 +3,6 @@ document.getElementById('back').addEventListener('click', (e) => {
     window.location.href = '/ProyectoVainilla/pag2.html'
 })
 
-setInterval(() => {
-    document.getElementById('chargingQuestions').style.display= 'none';
-    document.getElementById('table').style.display= '';
-}, 5000);
-
-// con esta función, que devuelve una promesa, validamos que los datos
-// del cuestionario para agregar preguntas sean los que nos interesa
 
 function validQuestionary() {
 
@@ -20,29 +13,26 @@ function validQuestionary() {
     let trueorfalse = document.getElementById('trueorfalse').value;
 
     return new Promise((resolve, reject) => {
-        // Si los campos no estan rellenados, no se guardará el resultado
-        // ni se actibará el boton
-        if (!question || !mark) {
-            reject(Error('Pregunta y puntuación son obligatorios,'));
+        if (!question || !mark || !trueorfalse) {
+            reject(Error('Todos los campos son obligatorios'));
             return;
         }
 
-        // Convertimos mark a numero para poder hacer la validación
+        // Convertimos mark a numero
         let markNumber = parseInt(mark);
 
-        // Si no se ha convertido en número, mostramos error
+        // validamos que sea un entero
         if (!Number.isInteger(markNumber)) {
             reject(Error('El puntaje ha de ser un número'));
             return;
         }
 
-        // Si se ha convertido en número, confirmamos que este
-        // dentro del rango
+        // Validamos rango 0–9
         if (markNumber < 0 || markNumber > 9) {
             reject(Error('El puntaje ha de estar entre 0 y 9'));
             return;
         }
-        
+
         resolve();
     })
 }
@@ -73,42 +63,27 @@ document.getElementById('save').addEventListener('click', (e) => {
 
     e.preventDefault();
 
-    let users = JSON.parse(localStorage.getItem('users'));
-    
-    let errorRand=Math.round(Math.random());
+    let mark = document.getElementById('mark').value;
 
-    let status;
-    let trueorfalse;
-    
-    let text = document.getElementById('question').value;
-    let punctuation = document.getElementById('mark').value;
-    let answer = document.getElementById('trueorfalse').checked;
+    let vof = document.getElementById('trueorfalse').value;
 
-    const question = { text, answer, punctuation }
-
-    if (answer) {
+    if (vof) {
         trueorfalse = 'Verdadero';
     } else {
         trueorfalse = 'Falso'
-    }
-    const currentUser = localStorage.getItem('currentUser');
-    
-    if( errorRand === 0 ) {    
-        users[currentUser].questions.push(question);
-        localStorage.setItem("users", JSON.stringify(users));
-        console.log(users);
-        status='OK';
-    } else {
-        status='ERROR';
     }
 
     document.getElementById('table').innerHTML += '<tr>' +
         '<td>Número ' + num + '</td>' +
         '<td>' + trueorfalse + '</td>' +
-        '<td>' + punctuation + '</td>' +
-        '<td>'+status+'</td>' +
-        '</tr>';
+        '<td>' + mark + '</td>' +
+        '<td id="status">Guardando...</td>' +
+        '                         </tr>';
 
+    setTimeout(() => {
+        document.getElementById('status').innerHTML = 'OK';
+    }, 5000);
     num++;
-
+    // hacer q cambie el estado para todos...
+    // si da ERROR :( no se guarda en localstorage
 })
