@@ -24,6 +24,12 @@ hr{
 ul{
     list-style: none;
     margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 
+    repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
 }
 button, #index, li{
     display: inline;
@@ -49,3 +55,4 @@ li:hover, button:hover{
     border-style: none;
     cursor: auto;
 }
+

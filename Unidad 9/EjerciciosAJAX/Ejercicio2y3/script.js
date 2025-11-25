@@ -1,4 +1,4 @@
-fetch(`https://jsonplaceholder.typicode.com/users`)
+fetch(`https://jsonplaceholder.typicode.com/usersa`)
     .then((response) => {
         if (response.ok) {
             return response.json();
@@ -8,14 +8,15 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
     })
     .then((data) => {
 
+        document.getElementById('myList').innerHTML += '<ul>';
         for (const user of data) {
-            console.log(user['name']);
             document.getElementById('myList').innerHTML += '<li>Nombre: ' + user['name'] + '</li>';
         }
+        document.getElementById('myList').innerHTML += '</ul>';
 
 
     })
     .catch((error) => {
-        console.log(error)
+        document.getElementById('myList').innerHTML += 'Error al cargar los datos';
     })
 
